@@ -2,7 +2,7 @@
 
 == Description
 
-Generates the data needed to represent a given schedule a date. 
+Generates the data needed to represent a given schedule a calendar. 
 
 == Installation
 
