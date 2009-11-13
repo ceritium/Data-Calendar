@@ -17,7 +17,7 @@ class DataCalendar
       
     days = []
     fill_days.times do |time|
-     days << day_and_types(first_day_of_month - (6 - time).day, @preview_month)
+     days << day_and_types(first_day_of_month - (6 - time).day, [@preview_month])
     end      
     days
   end 
@@ -40,7 +40,7 @@ class DataCalendar
     
     days = []
     fill_days.times do |time|
-      days << day_and_types( last_day_of_month + (time + 1).day, @next_month)
+      days << day_and_types( last_day_of_month + (time + 1).day, [@next_month])
     end       
     days
   end
@@ -56,7 +56,6 @@ class DataCalendar
   private
   
   def day_and_types(day, types = [])
-    types = types.to_a
     if [6,0].include?(day.wday) 
       types << :weekend
     end  
