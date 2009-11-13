@@ -1,6 +1,7 @@
 class DataCalendar
   def initialize(options = {})
      @date = options[:date] || Time.now
+     @date = @date.to_date
      @preview_month = options[:preview_month] || :preview_month
      @next_month = options[:next_month] || :next_month
   end   
@@ -64,7 +65,7 @@ class DataCalendar
       types << :today  
     end
        
-     {:date => day , :types => types}  
+     {:date => day, :types => types}  
   end          
   
 end

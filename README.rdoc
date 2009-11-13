@@ -11,6 +11,54 @@ Generates the data needed to represent a given schedule a calendar.
 == Usage
 
     require 'data_calendar'
+    
+    dc = DataCalendar.new(:date => Time.now -1.year)
+    
+    pp dc.all_days #=>
+    
+    [{:types=>[:preview_month], :date=>Mon, 26 Oct 2009},
+     {:types=>[:preview_month], :date=>Tue, 27 Oct 2009},
+     {:types=>[:preview_month], :date=>Wed, 28 Oct 2009},
+     {:types=>[:preview_month], :date=>Thu, 29 Oct 2009},
+     {:types=>[:preview_month], :date=>Fri, 30 Oct 2009},
+     {:types=>[:preview_month, :weekend], :date=>Sat, 31 Oct 2009},
+     {:types=>[:weekend], :date=>Sun, 01 Nov 2009},
+     {:types=>[], :date=>Mon, 02 Nov 2009},
+     {:types=>[], :date=>Tue, 03 Nov 2009},
+     {:types=>[], :date=>Wed, 04 Nov 2009},
+     {:types=>[], :date=>Thu, 05 Nov 2009},
+     {:types=>[], :date=>Fri, 06 Nov 2009},
+     {:types=>[:weekend], :date=>Sat, 07 Nov 2009},
+     {:types=>[:weekend], :date=>Sun, 08 Nov 2009},
+     {:types=>[], :date=>Mon, 09 Nov 2009},
+     {:types=>[], :date=>Tue, 10 Nov 2009},
+     {:types=>[], :date=>Wed, 11 Nov 2009},
+     {:types=>[], :date=>Thu, 12 Nov 2009},
+     {:types=>[:today], :date=>Fri, 13 Nov 2009},
+     {:types=>[:weekend], :date=>Sat, 14 Nov 2009},
+     {:types=>[:weekend], :date=>Sun, 15 Nov 2009},
+     {:types=>[], :date=>Mon, 16 Nov 2009},
+     {:types=>[], :date=>Tue, 17 Nov 2009},
+     {:types=>[], :date=>Wed, 18 Nov 2009},
+     {:types=>[], :date=>Thu, 19 Nov 2009},
+     {:types=>[], :date=>Fri, 20 Nov 2009},
+     {:types=>[:weekend], :date=>Sat, 21 Nov 2009},
+     {:types=>[:weekend], :date=>Sun, 22 Nov 2009},
+     {:types=>[], :date=>Mon, 23 Nov 2009},
+     {:types=>[], :date=>Tue, 24 Nov 2009},
+     {:types=>[], :date=>Wed, 25 Nov 2009},
+     {:types=>[], :date=>Thu, 26 Nov 2009},
+     {:types=>[], :date=>Fri, 27 Nov 2009},
+     {:types=>[:weekend], :date=>Sat, 28 Nov 2009},
+     {:types=>[:weekend], :date=>Sun, 29 Nov 2009},
+     {:types=>[], :date=>Mon, 30 Nov 2009},
+     {:types=>[:next_month], :date=>Tue, 01 Dec 2009},
+     {:types=>[:next_month], :date=>Wed, 02 Dec 2009},
+     {:types=>[:next_month], :date=>Thu, 03 Dec 2009},
+     {:types=>[:next_month], :date=>Fri, 04 Dec 2009},
+     {:types=>[:next_month, :weekend], :date=>Sat, 05 Dec 2009},
+     {:types=>[:next_month, :weekend], :date=>Sun, 06 Dec 2009}]
+    
 
 == License
 
