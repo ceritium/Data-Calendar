@@ -5,7 +5,7 @@ require 'rake/testtask'
 require 'lib/data_calendar/version'
 
 spec = Gem::Specification.new do |s|
-  s.name             = 'data-calendar'
+  s.name             = 'data_calendar'
   s.version          = DataCalendar::Version.to_s
   s.has_rdoc         = true
   s.extra_rdoc_files = %w(README.rdoc)

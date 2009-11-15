@@ -6,7 +6,7 @@ Generates the data needed to represent a given schedule a calendar.
 
 == Installation
 
-    sudo gem install data-calendar
+    sudo gem install data_calendar
 
 == Usage
 
