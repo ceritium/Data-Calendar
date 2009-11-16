@@ -17,7 +17,7 @@ class DataCalendar
     
     days_of_week = []
     7.times do |time|
-      days_of_week << first_day_of_week + time.days
+      days_of_week << day_and_types(first_day_of_week + time.days)
     end                                            
     
     days_of_week
