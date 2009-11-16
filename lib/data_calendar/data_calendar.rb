@@ -10,6 +10,19 @@ class DataCalendar
     [days_to_preview_month,days_to_current_month,days_to_next_month].flatten
   end
   
+  
+  # Return the days of the current week
+  def week
+    first_day_of_week = @date.monday
+    
+    days_of_week = []
+    7.times do |time|
+      days_of_week << first_day_of_week + time.days
+    end                                            
+    
+    days_of_week
+  end
+  
   def days_to_preview_month                                                
     fill_days = first_day_of_month.wday
     fill_days = 7 if fill_days == 0
