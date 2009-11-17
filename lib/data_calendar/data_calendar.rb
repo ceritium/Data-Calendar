@@ -1,15 +1,23 @@
 class DataCalendar
+  
   def initialize(options = {})
      @date = options[:date] || Time.now
      @date = @date.to_date
      @preview_month = options[:preview_month] || :preview_month
+     @date_method = options[:date_method] || :start_at 
      @next_month = options[:next_month] || :next_month
+     @events = [] 
+     
+  end
+  
+  # Add events to the array of dates
+  def events=(events)
+    @events = events 
   end   
   
   def all_days    
     [days_to_preview_month,days_to_current_month,days_to_next_month].flatten
   end
-  
   
   # Return the days of the current week
   def week
@@ -77,8 +85,18 @@ class DataCalendar
     if day.today?
       types << :today  
     end
+    
+    events =  get_events(day)
+    if events.present?
+      types << :busy
+    end
+    
        
-     {:date => day, :types => types}  
-  end          
+     {:date => day, :types => types, :events => events}  
+  end                                                     
+  
+  def get_events(day)
+    @events.select{|x| eval("x.#{@date_method}.to_date") == day.to_date}
+  end
   
 end
