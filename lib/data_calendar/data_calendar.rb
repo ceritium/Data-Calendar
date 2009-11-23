@@ -1,19 +1,17 @@
 class DataCalendar
+                                   
+  attr_accessor :events, :preview_month, :date_method, :next_month
   
   def initialize(options = {})
-     @date = options[:date] || Time.now
+     @date = options[:date] 
      @date = @date.to_date
      @preview_month = options[:preview_month] || :preview_month
      @date_method = options[:date_method] || :start_at 
      @next_month = options[:next_month] || :next_month
-     @events = [] 
+     @events = options[:events] || [] 
      
   end
-  
-  # Add events to the array of dates
-  def events=(events)
-    @events = events 
-  end   
+   
   
   def all_days    
     [days_to_preview_month,days_to_current_month,days_to_next_month].flatten
