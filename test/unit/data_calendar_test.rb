@@ -31,6 +31,8 @@ class DataCalendarTest < Test::Unit::TestCase
      
      should "return its days to preview month" do
        assert_equal ["2009-10-26", "2009-10-27", "2009-10-28", "2009-10-29", "2009-10-30", "2009-10-31"], @calendar.days_to_preview_month.map{|x| x[:date].to_s}     
+       dic_calendar = DataCalendar.new(:date => Date.parse('2009-12-5'))
+       assert_equal ["2009-11-30"], dic_calendar.days_to_preview_month.map{|x| x[:date].to_s}     
        #assert_equal [[:preview_month], [:preview_month], [:preview_month], [:preview_month], [:preview_month], [:preview_month, :weekend]], @calendar.days_to_preview_month.map{|x| x[:types]}     
        # TODO [:events]
      end  
