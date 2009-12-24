@@ -31,13 +31,18 @@ class DataCalendar
   
   def days_to_preview_month                                                
     fill_days = first_day_of_month.wday
-    fill_days = 7 if fill_days == 0
+    puts "fill_days", fill_days
+    fill_days = 7 if fill_days == 0    
     fill_days -= 1
-    first_day_of_month - fill_days.days
       
-    days = []
-    fill_days.times do |time|
-     days << day_and_types(first_day_of_month - (6 - time).day, [@preview_month])
+    days = [] 
+    fill_array = []
+    fill_days.times{|e| fill_array << e + 1}
+    puts "fill_array", fill_array
+    fill_array.reverse.each do |time| 
+      puts 'time: ', time
+      # days << day_and_types(first_day_of_month - (6 - time).day, [@preview_month])
+      days << day_and_types(first_day_of_month - time.day, [@preview_month])
     end      
     days
   end 
