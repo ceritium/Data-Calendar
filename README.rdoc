@@ -16,12 +16,12 @@ Generates the data needed to represent a given schedule a calendar.
     
     pp dc.all_days #=>
     
-    [{:types=>[:preview_month], :date=>Mon, 26 Oct 2009},
-     {:types=>[:preview_month], :date=>Tue, 27 Oct 2009},
-     {:types=>[:preview_month], :date=>Wed, 28 Oct 2009},
-     {:types=>[:preview_month], :date=>Thu, 29 Oct 2009},
-     {:types=>[:preview_month], :date=>Fri, 30 Oct 2009},
-     {:types=>[:preview_month, :weekend], :date=>Sat, 31 Oct 2009},
+    [{:types=>[:previous_month], :date=>Mon, 26 Oct 2009},
+     {:types=>[:previous_month], :date=>Tue, 27 Oct 2009},
+     {:types=>[:previous_month], :date=>Wed, 28 Oct 2009},
+     {:types=>[:previous_month], :date=>Thu, 29 Oct 2009},
+     {:types=>[:previous_month], :date=>Fri, 30 Oct 2009},
+     {:types=>[:previous_month, :weekend], :date=>Sat, 31 Oct 2009},
      {:types=>[:weekend], :date=>Sun, 01 Nov 2009},
      {:types=>[], :date=>Mon, 02 Nov 2009},
      {:types=>[], :date=>Tue, 03 Nov 2009},

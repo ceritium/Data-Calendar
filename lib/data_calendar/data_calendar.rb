@@ -1,11 +1,11 @@
 class DataCalendar
                                    
-  attr_accessor :events, :preview_month, :date_method, :next_month
+  attr_accessor :events, :previous_month, :date_method, :next_month
   
   def initialize(options = {})
      @date = options[:date] 
      @date = @date.to_date
-     @preview_month = options[:preview_month] || :preview_month
+     @previous_month = options[:previous_month] || :previous_month
      @date_method = options[:date_method] || :start_at 
      @next_month = options[:next_month] || :next_month
      @events = options[:events] || [] 
@@ -14,7 +14,7 @@ class DataCalendar
    
   
   def all_days    
-    [days_to_preview_month,days_to_current_month,days_to_next_month].flatten
+    [days_to_previous_month,days_to_current_month,days_to_next_month].flatten
   end
   
   # Return the days of the current week
@@ -29,20 +29,16 @@ class DataCalendar
     days_of_week
   end
   
-  def days_to_preview_month                                                
+  def days_to_previous_month                                                
     fill_days = first_day_of_month.wday
-    puts "fill_days", fill_days
     fill_days = 7 if fill_days == 0    
     fill_days -= 1
       
     days = [] 
     fill_array = []
     fill_days.times{|e| fill_array << e + 1}
-    puts "fill_array", fill_array
     fill_array.reverse.each do |time| 
-      puts 'time: ', time
-      # days << day_and_types(first_day_of_month - (6 - time).day, [@preview_month])
-      days << day_and_types(first_day_of_month - time.day, [@preview_month])
+      days << day_and_types(first_day_of_month - time.day, [@previous_month])
     end      
     days
   end 
